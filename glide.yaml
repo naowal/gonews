@@ -1,10 +1,5 @@
-package: .
+package: github.com/naowal/gonews
 import:
-- package: github.com/naowal/gonews
-  subpackages:
-  - pkg/app
-  - pkg/model
-  - pkg/view
 - package: github.com/tdewolff/minify
   version: ^2.2.0
   subpackages:
