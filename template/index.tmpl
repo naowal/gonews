@@ -5,13 +5,14 @@
   {{range .List}}
   <h1>{{.Title}}</h1><br>
   {{if .Image}}
-  <img src="{{.Image}}">
+  <img src="{{.Image}}" class="img-thumbnail" style="width:50%">
   {{end}}
   <p>{{.Detail}}</p>
 <li><a href="/news/{{.ID.Hex}}">{{.Title}}</a></li>
   {{end}}
   </ul>
 </div>
+
 {{end}}
 
 {{define "root-script"}}

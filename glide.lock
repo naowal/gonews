@@ -1,32 +1,18 @@
 hash: 0b5e8ded2a98930a8569eff4466c406759629024ce31160d6c5422e888542afc
-updated: 2017-11-09T21:02:52.434783365+07:00
+updated: 2017-11-09T21:49:40.118420042+07:00
 imports:
-- name: github.com/tdewolff/buffer
-  version: d2009e63643e90abda1625e00781b5a09eba566b
 - name: github.com/tdewolff/minify
   version: ffadf028a71d1a9b50f3169a1ab6a194fdd4a2dd
   subpackages:
   - css
   - html
   - js
-- name: github.com/tdewolff/parse
-  version: 70b448df550ea06fc21df9504385b24c2a301891
-  subpackages:
-  - css
-  - html
-  - js
-- name: github.com/tdewolff/strconv
-  version: 3e8091f4417ebaaa3910da63a45ea394ebbfb0e3
 - name: golang.org/x/crypto
   version: 6a293f2d4b14b8e6d3f0539e383f6d0d30fce3fd
   subpackages:
   - bcrypt
-  - blowfish
 - name: gopkg.in/mgo.v2
   version: 3f83fa5005286a7fe593b055f0d7771a7dce4655
   subpackages:
   - bson
-  - internal/json
-  - internal/sasl
-  - internal/scram
 testImports: []
