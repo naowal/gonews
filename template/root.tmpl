@@ -1,23 +1,77 @@
 {{define "root"}}
 <!DOCTYPE html>
-<html lang="en">
 
 <html lang="en">
-  <head>
-   <title>Go News</title>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link href="/~/css/style.css" rel="stylesheet">
-   {{template "root-style"}}
-  </head>
-  <body>
-   <div>
-    Navbar
-   </div>
-   {{template "root-body"}}
-   <div>
-    Footer
-   </div>
-   {{template "root-script"}}
-  </body>
+	<head>
+		<title>Go News</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="/~/css/style.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+		{{template "root-style" .}}
+	</head>
+	<body>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+	<br/>
+      <h4>Naowal's Blog</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="/">Home</a></li><br/>
+        <li><a href="/admin/login">Login</a></li><br/>
+        <li><a href="/admin/register">Register</a></li><br/>
+      </ul><br>
+    </div>
+
+    <div class="col-sm-9">
+	<br/>
+      <h4><small>RECENT POSTS</small></h4>
+      <hr>
+     		<div class="ui container">
+		{{template "root-body" .}}
+		</div> 
+      <br><br>
+      
+
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>Naowal copyright</p>
+</footer>
+<script src="https://cdnis.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnis.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+	</body>
 </html>
+{{end}}

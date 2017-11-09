@@ -1,6 +1,7 @@
 package view
 
 import (
+	"bytes"
 	"html/template"
 	"net/http"
 	"path/filepath"
@@ -8,13 +9,17 @@ import (
 	"github.com/tdewolff/minify"
 	"github.com/tdewolff/minify/css"
 	"github.com/tdewolff/minify/html"
-
-	"bytes"
+	"github.com/tdewolff/minify/js"
 )
 
 var (
-	tpIndex      = parseTemplate("root.tmpl", "index.tmpl")
-	tpAdminLogin = parseTemplate("root.tmpl", "admin/login.tmpl")
+	tpIndex         = parseTemplate("root.tmpl", "index.tmpl")
+	tpNews          = parseTemplate("root.tmpl", "news.tmpl")
+	tpAdminRegister = parseTemplate("root.tmpl", "admin/register.tmpl")
+	tpAdminLogin    = parseTemplate("root.tmpl", "admin/login.tmpl")
+	tpAdminList     = parseTemplate("root.tmpl", "admin/list.tmpl")
+	tpAdminCreate   = parseTemplate("root.tmpl", "admin/create.tmpl")
+	tpAdminEdit     = parseTemplate("root.tmpl", "admin/edit.tmpl")
 )
 
 var m = minify.New()
@@ -24,6 +29,7 @@ const templateDir = "template"
 func init() {
 	m.AddFunc("text/html", html.Minify)
 	m.AddFunc("text/css", css.Minify)
+	m.AddFunc("text/javascript", js.Minify)
 }
 
 func joinTemplateDir(files ...string) []string {
@@ -54,14 +60,4 @@ func render(t *template.Template, w http.ResponseWriter, data interface{}) {
 		return
 	}
 	m.Minify("text/html", w, &buf)
-}
-
-//Index renders index view
-func Index(w http.ResponseWriter, data interface{}) {
-	render(tpIndex, w, data)
-}
-
-//AdminLodin render admin view
-func AdminLogin(w http.ResponseWriter, data interface{}) {
-	render(tpAdminLogin, w, data)
 }

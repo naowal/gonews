@@ -1,0 +1,19 @@
+package: .
+import:
+- package: github.com/naowal/gonews
+  subpackages:
+  - pkg/app
+  - pkg/model
+  - pkg/view
+- package: github.com/tdewolff/minify
+  version: ^2.2.0
+  subpackages:
+  - css
+  - html
+  - js
+- package: golang.org/x/crypto
+  subpackages:
+  - bcrypt
+- package: gopkg.in/mgo.v2
+  subpackages:
+  - bson

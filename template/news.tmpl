@@ -1,22 +1,15 @@
 {{define "root-body"}}
 <div>
-  <br>
-  <ul>
-  {{range .List}}
+  News<br>
   <h1>{{.Title}}</h1><br>
   {{if .Image}}
   <img src="{{.Image}}">
   {{end}}
   <p>{{.Detail}}</p>
-<li><a href="/news/{{.ID.Hex}}">{{.Title}}</a></li>
-  {{end}}
-  </ul>
 </div>
 {{end}}
 
 {{define "root-script"}}
-<script>
-</script>
 {{end}}
 
 {{define "root-style"}}
